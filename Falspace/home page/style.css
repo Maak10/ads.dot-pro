@@ -1,0 +1,361 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('./Assets/image/backgrnd.png');
+    background-size: cover;
+  
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    font-family: Arial, sans-serif;
+  
+
+  }
+  .overlay-image {
+    width: 90%;
+    height: 700px;
+    position:   absolute;
+    top: 20px;
+    left: 60px;
+    
+    
+  }
+  
+  @keyframes zoomInOut {
+    0% {
+      transform: scale(1); /* Normal size */
+    }
+    50% {
+      transform: scale(1.2); /* Slightly zoomed in */
+    }
+    100% {
+      transform: scale(1); /* Back to normal size */
+    }
+  }
+ 
+  .overlay-image1 {
+    width: 500px;
+    position: absolute;
+    top: 13%;
+    left: 10%;
+    transform: translate(-50%, -50%);
+  
+     z-index: 1; 
+     animation: zoomInOut 5s ease-in-out infinite alternate; 
+  }
+  .overlay-image2 {
+    width: 1000px;
+    position: absolute;
+    top: 38%;
+    height: 700px;
+    left: 32%;
+    transform: translate(-50%, -50%);
+    z-index: 1; /* Ensures the overlay image is on top of the background */
+  }
+  /* .overlay-image3 {
+    width: 800px;
+    position: absolute;
+    transform: translate(50%, -1%);
+    height: 500px;
+    left: 20%;
+   
+        
+        z-index: 2; /* Ensures the overlay image is on top of the background */
+  /* } */
+  .navbar {
+    position: absolute;
+    top: 20px;
+    right: 80px;
+    ; /* Ensure navbar is above overlay image */
+    
+  }
+  .btn1 {
+    background-color: transparent;
+    width: 200px;
+    height: 80px;
+    color: aliceblue;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 50px 50px 50px 50px;
+    border-color: white;
+    border-width: 5px;
+    z-index: 2;
+  
+   
+  }
+  .btn2 {
+    background-color: transparent;
+    width: 200px;
+    height: 80px;
+    color: aliceblue;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 50px 50px 50px 50px;
+    border-color: white;
+    border-width: 5px;
+    z-index: 2;
+  }
+  .btn-dec{
+    color: inherit;
+    text-decoration: none;
+    font-size: 20px;
+    position: relative;
+    top: 0px;
+    z-index: 2;
+    width: 300px;
+  }
+  
+  @keyframes blink {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  .blink-button {
+    animation: blink 2s infinite;
+    background-color: #010202;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius:50px 50px 50px 50px;
+    box-shadow: 0 4px 6px rgba(228, 56, 56, 0.1);
+    width: 200px;
+    position: absolute;
+    z-index: 2;
+    
+   /* display: none; */
+  
+  
+  }
+  
+  
+  .blink-button:hover {
+    animation-play-state: paused; /* Pause animation on hover */
+  }
+  
+  
+  
+  
+  /* Responsive adjustments for 1920x1200 resolution */
+  @media (min-width: 1920px) and (min-height: 1200px) {
+    .navbar {
+        position: absolute;
+        top:0px;
+        right: 90px;
+        z-index: 2; /* Ensure navbar is above overlay image */
+        
+      }
+      .btn1 {
+     
+        width: 250px;
+        height: 100px;
+        position: relative;
+        top: -70px;
+      }
+      .btn2 {
+        position: relative;
+        top: -70px;
+        width: 250px;
+        height: 100px;
+
+      }
+    .overlay-image {
+     width: 110rem; /* Adjust width for larger screens */
+     position: absolute;
+     height: 65rem;
+     top: 60px;
+     left: 80px;
+    }
+    .overlay-image1 {
+        width: 550px;
+        height: 150px;
+        position: absolute;
+        top: 25%;
+        left: 17%;
+     
+      }
+    .overlay-image2 {
+      width: 1200px; 
+      height: 1000px;/* Adjust width for larger screens */
+      top: 40%; /* Adjust position */
+      left: 35%; /* Adjust position */
+    }
+    .overlay-image3 {
+        width:auto;
+        position: absolute;
+        transform: translate(-25%, -60%);
+        height: 100rem;
+        left: 60%;
+        top: 80%;
+            
+            z-index: 2;
+            opacity: 90px; /* Ensures the overlay image is on top of the background */
+      }
+    .btn-dec{
+      font-size: 30px;
+      color: rgb(255, 255, 255);
+    }
+    
+  .blink-button {
+    position: relative;
+    top: 950px;
+    left: 100px;
+    width:670px;
+    height: 150px;
+    font-size: 40px;
+    display: inline;
+    z-index: 2;
+    
+  
+  }
+  }
+  
+  /* Resetting default link styles */
+  
+  
+  
+  /* button anim */
+ 
+  transition_all_03s {
+    transition:all .3s ease;
+  }
+  backface_visibility_hidden{
+    backface-visibility:hidden;
+    -webkit-backface-visibility:hidden;
+  }
+  
+  *, *:before, *:after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .swiper-container {
+    width: 100%;
+    height: 28vw;
+    transition:opacity .6s ease;
+    &.swiper-container-coverflow{
+      padding-top:2%;
+    }
+    &.loading{
+      opacity:0;
+      visibility:hidden;
+    }
+    &:hover{
+      .swiper-button-prev,
+      .swiper-button-next{
+        transform:translateX(0);
+        opacity:1;
+        visibility:visible;
+      }
+    }
+  }
+  .swiper-wrapper{
+  
+  }
+  .swiper-slide{
+    background-position:center;
+    background-size:cover;
+    .slide-inner{
+      
+    }
+    .entity-img{
+      display:none;
+    }
+    .content{
+      position:absolute;
+      top:40%;
+      left:0;
+      width:50%;
+      padding-left:5%;
+      color:#fff;
+      .title{
+        font-size:2.6em;
+        font-weight:bold;
+        margin-bottom:30px;
+      }
+      .caption{
+        display:block;
+        font-size:13px;
+        line-height:1.4;
+      }
+    }
+  }
+  [class^="swiper-button-"]{
+    width:44px;
+    opacity:0;
+    visibility:hidden;
+    @extend %transition_all_03s;
+  }
+  .swiper-button-prev{
+    transform:translateX(50px);
+  }
+  .swiper-button-next{
+    transform:translateX(-50px);
+  }
+  .swiper-container-horizontal{
+    >.swiper-pagination-bullets{
+      .swiper-pagination-bullet{
+        margin:0 9px;
+        position:relative;
+        width:12px;
+        height:12px;
+        background-color:#fff;
+        opacity:.4;
+        @extend %transition_all_03s;
+        &::before{
+          content:'';
+          position:absolute;
+          top:50%;
+          left:50%;
+          width:18px;
+          height:18px;
+          transform:translate(-50%, -50%);
+          border:0px solid #fff;
+          border-radius:50%;
+          @extend %transition_all_03s;
+        }
+        &:hover,
+        &.swiper-pagination-bullet-active{
+          opacity:1;
+        }
+        &.swiper-pagination-bullet-active{
+          &::before{
+            border-width:1px;
+          }
+        }
+      }
+    }
+  }
+  
+
+  @media(max-width:1180px){
+    .swiper-slide{
+      .content{
+        .title{
+          font-size:25px;
+        }
+        .caption{
+          font-size:12px;
+        }
+      }
+    }
+  }
+  @media(max-width:1023px){
+    .swiper-container {
+      height:40vw;
+      &.swiper-container-coverflow{
+        padding-top:0;
+      }
+    }
+  }

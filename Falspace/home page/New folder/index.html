@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled Layout</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #4b0082; /* Indigo background */
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .introcontainer {
+            width: 100%;
+            height: 100%;
+            margin: auto;
+        }
+
+        .swiper-container {
+            width: 100%;
+            height: 100vh;
+        }
+
+        .swiper-slide {
+            width: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            margin: auto;
+        }
+
+        .cards {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card .image {
+            object-fit: cover;
+            width: 400px;
+            border-radius: 19px;
+            max-width: 100%;
+            height: auto;
+            min-height: 40vh;
+            padding: 0;
+            margin: 0;
+        }
+
+        .card.two .image {
+            filter: sepia(100%) hue-rotate(190deg) saturate(300%);
+        }
+
+        .card.three .image {
+            height: 50vh;
+        }
+
+        .card.four .image {
+            filter: invert(4%) sepia(75%) saturate(500%) hue-rotate(356deg) brightness(70%) contrast(103%);
+        }
+
+        .container h1 {
+            display: block;
+            font-family: "Futura";
+            font-weight: 700;
+            line-height: normal;
+            font-size: 3vmin;
+            position: relative;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .swiper-slide .container {
+            transform: translateX(-50%);
+            transition: all .7s ease .3s;
+        }
+
+        .swiper-slide-active .container {
+            transform: translateX(0%);
+            opacity: 1;
+            transition: all .7s ease;
+        }
+
+        .swiper-scrollbar {
+            background: white;
+        }
+
+        .swiper-slide .card .image {
+            transition: filter .7s ease;
+            filter: grayscale(100%);
+        }
+
+        .swiper-slide-active .card .image {
+            filter: grayscale(0%) brightness(60%);
+        }
+
+        .bottom-container {
+            background-color: #72558C;
+            color: white;
+            border-radius: 25px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 20px;
+            width: 100%;
+            height: 60px;
+            position: absolute;
+            top: 85%;
+            left: 0;
+            opacity: 0;
+            z-index: 15;
+        }
+
+        .section {
+            text-align: center;
+        }
+
+        .section img {
+            width: 50px; /* Adjust size as needed */
+            height: auto;
+        }
+
+        .section .text {
+            margin-top: 10px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="introcontainer">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="cards">
+                        <div class="card">
+                            <img src="https://via.placeholder.com/400" alt="Image 1" class="image">
+                        </div>
+                    </div>
+                    <div class="container">
+                        <h1>Jurassic Park</h1>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="cards">
+                        <div class="card">
+                            <img src="../assets/image/kid-with-vr-glasses-experiencing-metaverse 1.png" alt="Image 2" class="image">
+                        </div>
+                    </div>
+                    <div class="container">
+                        <h1>Another Movie</h1>
+                    </div>
+                </div>
+                <!-- Add more slides as needed -->
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+            <!-- Add Scrollbar -->
+            <div class="swiper-scrollbar"></div>
+        </div>
+    </div>
+    <div class="bottom-container">
+        <div class="section">
+            <img src="../assets/image/portrait-young-african-american-man-with-vr-glasses 2.png" alt="Icon 1">
+            <div class="text">Comfirtable</div>
+        </div>
+        <div class="section">
+            <img src="../assets/image/kid-with-vr-glasses-experiencing-metaverse 1.png" alt="Icon 2">
+            <div class="text">7 min</div>
+        </div>
+        <div class="section">
+            <img src="../assets/image/Rectangle 2.png" alt="Icon 3">
+            <div class="text">96.32 km</div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            direction: 'horizontal',
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            scrollbar: {
+                el: '.swiper-scrollbar',
+                hide: false,
+            },
+            on: {
+                slideChangeTransitionEnd: function() {
+                    document.querySelector('.bottom-container').style.opacity = 1;
+                }
+            }
+        });
+    </script>
+</body>
+</html>
